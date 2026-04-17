@@ -68,8 +68,11 @@ with open('data/produtos_financeiros.json', 'r', encoding='utf-8') as f:
 
 ### Como os dados são usados no prompt?
 > Os dados vão no system prompt? São consultados dinamicamente?
+
+Os dados podem ser inseridos diretamente no prompt para fornecer contexto ao agente. No entanto, em soluções mais robustas, o ideal é que esses dados sejam carregados dinamicamente, permitindo maior flexibilidade e eficiência no uso das informações.
+
 ```text
-DADOS DO CLIENTE E PERFIL:
+DADOS DO CLIENTE E PERFIL (data/perfil_investidor.json):
 {
   "nome": "João Silva",
   "idade": 32,
@@ -94,13 +97,65 @@ DADOS DO CLIENTE E PERFIL:
   ]
 }
 
-TRANZAÇÕES DO CLIENTE:
+TRANZAÇÕES DO CLIENTE (data/transacoes.csv):
+data,descricao,categoria,valor,tipo
+2025-10-01,Salário,receita,5000.00,entrada
+2025-10-02,Aluguel,moradia,1200.00,saida
+2025-10-03,Supermercado,alimentacao,450.00,saida
+2025-10-05,Netflix,lazer,55.90,saida
+2025-10-07,Farmácia,saude,89.00,saida
+2025-10-10,Restaurante,alimentacao,120.00,saida
+2025-10-12,Uber,transporte,45.00,saida
+2025-10-15,Conta de Luz,moradia,180.00,saida
+2025-10-20,Academia,saude,99.00,saida
+2025-10-25,Combustível,transporte,250.00,saida
 
 HISTORICO DE ATENDIMENTO DO CLIENTE:
 
 
-PRODUTOS DISPONIVEIS PARA ENSINO:
-
+PRODUTOS DISPONIVEIS PARA ENSINO (data/produtos_financeiros.json):
+[
+  {
+    "nome": "Tesouro Selic",
+    "categoria": "renda_fixa",
+    "risco": "baixo",
+    "rentabilidade": "100% da Selic",
+    "aporte_minimo": 30.00,
+    "indicado_para": "Reserva de emergência e iniciantes"
+  },
+  {
+    "nome": "CDB Liquidez Diária",
+    "categoria": "renda_fixa",
+    "risco": "baixo",
+    "rentabilidade": "102% do CDI",
+    "aporte_minimo": 100.00,
+    "indicado_para": "Quem busca segurança com rendimento diário"
+  },
+  {
+    "nome": "LCI/LCA",
+    "categoria": "renda_fixa",
+    "risco": "baixo",
+    "rentabilidade": "95% do CDI",
+    "aporte_minimo": 1000.00,
+    "indicado_para": "Quem pode esperar 90 dias (isento de IR)"
+  },
+  {
+    "nome": "Fundo Multimercado",
+    "categoria": "fundo",
+    "risco": "medio",
+    "rentabilidade": "CDI + 2%",
+    "aporte_minimo": 500.00,
+    "indicado_para": "Perfil moderado que busca diversificação"
+  },
+  {
+    "nome": "Fundo de Ações",
+    "categoria": "fundo",
+    "risco": "alto",
+    "rentabilidade": "Variável",
+    "aporte_minimo": 100.00,
+    "indicado_para": "Perfil arrojado com foco no longo prazo"
+  }
+]
 
 ```
 
@@ -109,20 +164,26 @@ PRODUTOS DISPONIVEIS PARA ENSINO:
 ## Exemplo de Contexto Montado
 
 > Mostre um exemplo de como os dados são formatados para o agente.
-
+O exemplo de contexto montado é baseado nos dados originais da base de conhecimento, porém esses dados são sintetizados, mantendo apenas as informações mais relevantes. Isso é feito para otimizar o consumo de tokens e tornar o processamento mais eficiente. No entanto, é importante destacar que, mais importante do que economizar tokens, é garantir que todas as informações relevantes estejam presentes no contexto, pois isso impacta diretamente na qualidade das respostas do agente.
 ```
-Dados do Cliente:
+DADOS DO CLIENTE:
 - Nome: João Silva
-- Perfil: Conservador
-- Saldo disponível: R$ 5.000
+- Perfil: Moderado
+- Objetivo: Construir reserva de emergência
+- Reserva atual: R$ 10.000 (meta: R$ 15.000)
 
-Resumo de Gastos:
-- Alimentação: R$ 1.200
-- Transporte: R$ 400
-- Lazer: R$ 300
+RESUMO DE GASTOS:
+- Moradia: R$ 1.380
+- Alimentação: R$ 570
+- Transporte: R$ 295
+- Saúde: R$ 188
+- Lazer: R$ 55,90
+- Total de saídas: R$ 2.488,90
 
-Últimas transações:
-- 01/11: Supermercado - R$ 450
-- 03/11: Streaming - R$ 55
-- 05/11: Combustível - R$ 200
+PRODUTOS DISPONÍVEIS PARA EXPLICAR:
+- Tesouro Selic (risco baixo)
+- CDB Liquidez Diária (risco baixo)
+- LCI/LCA (risco baixo)
+- Fundo Multimercado (risco médio)
+- Fundo de Ações (risco alto)
 ```
