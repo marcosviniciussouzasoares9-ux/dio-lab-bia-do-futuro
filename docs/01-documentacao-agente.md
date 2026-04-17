@@ -100,12 +100,12 @@ flowchart TD
 
 ### Estratégias Adotadas
 
-- [ ] O agente responde apenas com base nos dados fornecidos
-- [ ] Não inventa informações
-- [ ] Quando não tem certeza, informa claramente
-- [ ] Evita recomendações financeiras arriscadas
-- [ ] Considera o perfil do investidor antes de sugerir qualquer produto
-- [ ] Pode indicar a fonte dos dados utilizados (ex: transações, perfil)
+- [x] O agente responde apenas com base nos dados fornecidos
+- [x] Não inventa informações
+- [x] Quando não tem certeza, informa claramente
+- [x] Evita recomendações financeiras arriscadas
+- [x] Considera o perfil do investidor antes de sugerir qualquer produto
+- [x] Pode indicar a fonte dos dados utilizados (ex: transações, perfil)
 
 ### Limitações Declaradas
 > O que o agente NÃO faz?
