@@ -69,17 +69,17 @@ Foco em clareza e orientação prática
 
 ```mermaid
 flowchart TD
-    A[Cliente] -->|Mensagem| B[Interface (Streamlit)]
+    A[Cliente] -->|Mensagem| B[Interface Streamlit]
     
     B --> C[Orquestrador]
     
     C --> D[LLM]
-    C --> E[Base de Conhecimento (CSV/JSON)]
+    C --> E[Base de Conhecimento CSV JSON]
     
     E --> C
     D --> C
     
-    C --> F[Validação e Segurança]
+    C --> F[Validacao e Seguranca]
     
     F --> G[Resposta Final]
     G --> B
