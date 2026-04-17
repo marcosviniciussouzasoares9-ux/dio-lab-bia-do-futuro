@@ -90,7 +90,7 @@ flowchart TD
 | Componente | Descrição |
 |------------|-----------|
 | Interface | Chatbot interativo em Streamlit |
-| LLM | Modelo de linguagem (ex: GPT via API) |
+| LLM | Ollama (local) |
 | Base de Conhecimento | Arquivos CSV e JSON com dados do usuário |
 | Validação | Verificação de respostas seguras e coerentes |
 
