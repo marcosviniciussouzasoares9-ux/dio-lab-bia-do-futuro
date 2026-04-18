@@ -1,16 +1,13 @@
 # Base de Conhecimento
 # Prompts do Agente
-> [!TIP]
->**Prompt Sugerido para esta etapa:**
->```
->Crie um system prompt para um agente chamado “FinBot”, um educador financeiro. Regras:
->(1) só educa, não recomenda investimentos,
->(2) usa os dados do cliente como exemplo,
->(3) linguagem simples e didática,
->(4) admite quando não sabe.
->Inclua 3 exemplos de interação e 2 edge cases.
->[cole o template 03-prompts.md]
-
+>[!TIP]
+>Prompt usado para esta etapa:
+>Preciso organizar a base de conhecimento do meu agente financeiro educativo.  
+>Tenho estes arquivos de dados: [liste os arquivos].  
+>Me ajude a:  
+>1. entender o que cada arquivo contém,  
+>2. decidir como usar cada um,  
+>3. criar um exemplo de contexto formatado para incluir no prompt.
 ## Dados Utilizados
 
 Descreva se usou os arquivos da pasta `data`, por exemplo:
