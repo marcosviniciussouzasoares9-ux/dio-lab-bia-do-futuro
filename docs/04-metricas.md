@@ -28,23 +28,23 @@ Crie testes simples para validar seu agente:
 
 ### Teste 1: Consulta de gastos
 - **Pergunta:** "Quanto gastei com alimentação?"
-- **Resposta esperada:** Valor baseado no `transacoes.csv`
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Resposta esperada:** R$ 900,00 (baseado no `transacoes.csv`)
+- **Resultado:** [x] Correto  [ ] Incorreto
 
 ### Teste 2: Recomendação de produto
 - **Pergunta:** "Qual investimento você recomenda para mim?"
 - **Resposta esperada:** Produto compatível com o perfil do cliente
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Resultado:** [x] Correto  [ ] Incorreto
 
 ### Teste 3: Pergunta fora do escopo
 - **Pergunta:** "Qual a previsão do tempo?"
 - **Resposta esperada:** Agente informa que só trata de finanças
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Resultado:** [x] Correto  [ ] Incorreto
 
 ### Teste 4: Informação inexistente
 - **Pergunta:** "Quanto rende o produto XYZ?"
 - **Resposta esperada:** Agente admite não ter essa informação
-- **Resultado:** [ ] Correto  [ ] Incorreto
+- **Resultado:** [x] Correto  [ ] Incorreto
 
 ---
 
@@ -53,10 +53,17 @@ Crie testes simples para validar seu agente:
 Após os testes, registre suas conclusões:
 
 **O que funcionou bem:**
-- [Liste aqui]
-
+- O agente conseguiu responder corretamente perguntas sobre gastos com base nos dados de `transacoes.csv`  
+- As respostas foram claras e de fácil entendimento  
+- O agente respeitou o escopo financeiro, recusando perguntas fora do contexto  
+- As recomendações foram coerentes com o perfil do cliente  
+- Não houve respostas inventadas (sem alucinações)  
 **O que pode melhorar:**
-- [Liste aqui]
+- Melhorar a precisão em perguntas mais específicas (ex: categorias detalhadas de gastos)  
+- Tornar as respostas mais dinâmicas e naturais  
+- Implementar melhor análise de tendências (ex: comparar meses)  
+- Melhorar a personalização com base no histórico de atendimento  
+- Adicionar mais interatividade na conversa  
 
 ---
 
